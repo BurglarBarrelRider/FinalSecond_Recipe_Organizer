@@ -39,3 +39,5 @@ Function searchRecipeByName: Create a function to search for recipes by name.
 Function deleteRecipeByName: Create a function to delete a recipe by its name.
 
 Main Function main: The main block of code where the user is presented with a menu of actions: display all recipes, search by name, delete by name, add a new recipe, or exit the program.
+
+![Снимок экрана (27)](https://github.com/BurglarBarrelRider/FinalSecond_Recipe_Organizer/assets/126348138/4876609c-9f1e-4425-8667-9e1bc9a53a78)
