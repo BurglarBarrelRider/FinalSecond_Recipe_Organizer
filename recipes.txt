@@ -1,0 +1,31 @@
+#include <iostream>
+#include <fstream>
+0
+
+-----
+pizza margarita
+pizza
+4
+tomatoes
+mozarella cheese
+basil
+sauce
+Make it your own special way and enjoy
+-----
+pizza pepperoni
+pizza
+3
+cheese mozarella
+pepperoni
+sauce
+Make it in your own special way
+-----
+Shakshuka
+omelette
+4
+tomatoes
+eggs
+onions
+pepper
+fry all the vegetables over low heat and then proceed adding eggs. ENjoy your breakfast
+-----
