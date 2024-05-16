@@ -78,6 +78,37 @@ void displayAllRecipes(const vector<Recipe>& recipes) {
 // }
 
 
+void searchRecipeByName(const vector<Recipe>& recipes, const string& name) {
+    vector<Recipe> matchedRecipes;
+    for (const auto& recipe : recipes) {
+        if (recipe.name == name) {
+            matchedRecipes.push_back(recipe);
+        }
+    }
+
+    if (matchedRecipes.empty()) {
+        cout << "------------------------" << endl;
+        cout << "No recipes found when searching the name: " << name << endl;
+    } else {
+        cout << "Recipes with the name '" << name << "':" << endl;
+        for (const auto& recipe : matchedRecipes) {
+            displayRecipe(recipe);
+            cout << "------------------------" << endl;
+        }
+    }
+}
+
+void deleteRecipeByName(vector<Recipe>& recipes, const string& name) {
+    for (size_t i = 0; i < recipes.size(); ++i) {
+        if (recipes[i].name == name) {
+            recipes.erase(recipes.begin() + i);
+            cout << "Recipe '" << name << "' deleted successfully." << endl;
+            return;
+        }
+    }
+    cout << "No recipe found with the name: " << name << endl;
+}
+
 int main() {
     
     vector<Recipe> recipes;
@@ -89,6 +120,7 @@ int main() {
         cout << " -------| W e l c o m e |------- "<< endl;
         cout << "Recipe Collection Organizer:" << endl;
         cout << "1. Display all recipes" << endl;
+        cout << "2. Search for a recipe by name" << endl;
         cout << "3. Delete a recipe by name" << endl;
         cout << "4. Add a new recipe" << endl;
         cout << "5. Exit" << endl;
@@ -100,6 +132,20 @@ int main() {
             case 1:
                 displayAllRecipes(recipes);
                 break;
+            case 2: {
+                string name;
+                cout << "Enter the name of the recipe you wantto search: ";
+                getline(cin, name);
+                searchRecipeByName(recipes, name);
+                break;
+            }
+            case 3: {
+                string name;
+                cout << "Enter the name of the recipe you want to delete: ";
+                getline(cin, name);
+                deleteRecipeByName(recipes, name);
+                break;
+            }
             case 4: {
                 Recipe newRecipe;
                 addRecipe(newRecipe);
@@ -120,3 +166,4 @@ int main() {
 
     return 0;
 }
+
